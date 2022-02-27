@@ -13,7 +13,6 @@ app.use(express.urlencoded({ extended: true }))
 app.get('/', (req, res) => {
   const postsQuery = req.query
   let postsForRender = db.posts
-  console.log(postsQuery)
   if (postsQuery.limit !== undefined && Number.isNaN(+postsQuery.limit) === false) {
     postsForRender = db.posts.slice(0, postsQuery.limit)
   }
